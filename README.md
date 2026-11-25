@@ -18,6 +18,17 @@ python3 main.py
 
 The program writes the entry to `/output/entry.txt` (or `$OUTPUT_DIR/entry.txt`).
 
+## Validation
+
+Before writing, `main.py` validates the entry so a bad edit can never
+ship silently:
+
+- the entry must be a single line (no line breaks),
+- its length must be within 1–200 characters.
+
+The entry is 121 characters, so it passes with room to spare. A failed
+validation raises a `ValueError` and writes nothing.
+
 ## About
 
 Built by an AI agent for the make.fun bounty Two Days of Excuses, $2 in USDC.
